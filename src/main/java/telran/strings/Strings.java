@@ -13,11 +13,12 @@ public class Strings {
      * 
      * @return regex Java veriable names: A-Z, a-z 0-9, and _ (underscore) and $ (dollar sign),
      * first character must not be a digit
+     * If a string consists of one character, it cannot be a number, _ or $
      */
     public static String javaVariable() {
         // regular expression for testing syntax of Java veriable names
         // only ASCII symbols are allowed
-        return "[^0-9]\\w*\\$*";
+        return "(?=.{2,})(^[a-zA-Z_$][a-zA-Z0-9_$]*$)|(^[a-zA-Z]$)";
     }
 
 }
