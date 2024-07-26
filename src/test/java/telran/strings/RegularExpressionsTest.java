@@ -18,6 +18,7 @@ public class RegularExpressionsTest {
         assertTrue(Pattern.matches(javaVariable(), "name12"));
         assertTrue(Pattern.matches(javaVariable(), "naAe_"));
         assertTrue(Pattern.matches(javaVariable(), "name$$"));
+        assertTrue(Pattern.matches(javaVariable(), "$"));
        
         assertFalse(Pattern.matches(javaVariable(), "name 2"));
         assertFalse(Pattern.matches(javaVariable(), "1name"));

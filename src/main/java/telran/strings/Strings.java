@@ -18,7 +18,7 @@ public class Strings {
     public static String javaVariable() {
         // regular expression for testing syntax of Java veriable names
         // only ASCII symbols are allowed
-        return "(?=.{2,})(^[a-zA-Z_$][a-zA-Z0-9_$]*$)|(^[a-zA-Z]$)";
+        return "(^[a-zA-Z_$][a-zA-Z0-9_$]+$)|(^[a-zA-Z$]$)";
     }
 
 }
