@@ -81,11 +81,11 @@ public class Strings {
         //Operand may be either Java variable name or number (better any)
 
         boolean res = true;
-        
-        if (!isEqualNumbersOfBrakets(expr) || expr.strip().length() == 0) {
+        expr = expr.replaceAll("\\s+", "");
+
+        if (!isEqualNumbersOfBrakets(expr) || expr == null || expr.length() == 0) {
             res = false;
         } else {
-            expr = expr.replaceAll("\\s+", "");
             String[] arrayOperation = expr.split("[-+/*]");
             int i = 0;
             while (i < arrayOperation.length && res) {
