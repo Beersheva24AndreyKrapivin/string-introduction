@@ -86,7 +86,7 @@ public class Strings {
         if (!isEqualNumbersOfBrakets(expr) || expr.length() == 0) {
             res = false;
         } else {
-            String[] arrayOperation = expr.split("[-+/*]");
+            String[] arrayOperation = expr.split("[\\-\\+\\/\\*]");
             int i = 0;
             while (i < arrayOperation.length && res) {
                   if (arrayOperation[i].matches("[\\)].*||.*[\\($]||.*[a-zA-Z0-9_$][\\\\(].*||.*[\\\\)][a-zA-Z0-9_$].*")) {
