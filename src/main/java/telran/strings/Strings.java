@@ -88,7 +88,7 @@ public class Strings {
         expr = expr.replaceAll("\\s+", "");
 
         if (!isEqualNumbersOfBrakets(expr) || expr.length() == 0
-                || expr.matches("[\\)].*||.*[\\($]||.*[a-zA-Z0-9_$][\\\\(].*||.*[\\\\)][a-zA-Z0-9_$].*")) {
+                || expr.matches("[\\)].*||.*[\\($]||.*[a-zA-Z0-9_$][\\(].*||.*[\\)][a-zA-Z0-9_$].*")) {
             res = false;
         } else {
             String[] arrayOperation = expr.split("[\\-\\+\\/\\*]");
@@ -106,8 +106,13 @@ public class Strings {
     }
 
     private static boolean isEqualNumbersOfBrakets(String expr) {
-        return (expr.length() - expr.replaceAll("[\\(]+", "").length()) == (expr.length()
-                - expr.replaceAll("[\\)]+", "").length());
+        int countOpenBrakets = expr.length() - expr.replaceAll("[\\(]+", "").length();
+        int countCloseBrakets = expr.length() - expr.replaceAll("[\\)]+", "").length();
+
+        boolean isStartedClose = (expr.indexOf(")") - expr.indexOf("(")) > 0;
+        boolean isEndedOpen = (expr.lastIndexOf(")") - expr.lastIndexOf("(")) > 0;
+       
+        return countOpenBrakets == countCloseBrakets && isStartedClose && isEndedOpen;
     }
 
 }

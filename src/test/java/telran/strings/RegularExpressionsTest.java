@@ -149,5 +149,7 @@ public class RegularExpressionsTest {
         assertFalse(isArithmeticExpression(expr12));
         String expr13 = "7 - 4(b)";
         assertFalse(isArithmeticExpression(expr13));
+        String expr14 = "((a + x) / 5)) + (15";
+        assertFalse(isArithmeticExpression(expr14));
     }
 }
