@@ -83,7 +83,7 @@ public class Strings {
         boolean res = true;
         expr = expr.replaceAll("\\s+", "");
 
-        if (!isEqualNumbersOfBrakets(expr) || expr == null || expr.length() == 0) {
+        if (!isEqualNumbersOfBrakets(expr) || expr.length() == 0) {
             res = false;
         } else {
             String[] arrayOperation = expr.split("[-+/*]");
